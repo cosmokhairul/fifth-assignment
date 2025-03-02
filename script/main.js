@@ -40,9 +40,30 @@ const completeBtns = document.getElementsByClassName("complete-btns");
             You have complete the task ${taskTitle} at ${currentTime};
             `
             container.appendChild(p);
+
         });
     }
 
+    function currentDate() {
+        return new Date().toLocaleDateString("en-US", {
+            weekday: "short", 
+            month: "short",   
+            day: "2-digit",   
+            year: "numeric"
+        }).replace(',', '');
+    }
+    document.getElementById("current-date").textContent = currentDate();
+
+    document.getElementById("blog-btn").addEventListener("click", function(){
+        window.location.href = "./blog.html";
+    })
+
+    const colors = ["#C5FFFD", "#E6EBE0", "#F7F7FF", "#F9E9EC", "#FBF7F4", "#EAF4F4", "#F6FFF8"];
+
+    document.getElementById("background-changer").onclick = function() {
+        const colorIndex = Math.floor(Math.random() * colors.length);
+        document.body.style.backgroundColor = colors[colorIndex];
+    };
 
 
 
