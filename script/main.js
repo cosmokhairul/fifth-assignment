@@ -42,6 +42,8 @@ const completeBtns = document.getElementsByClassName("complete-btns");
             p.innerText = `
             You have complete the task ${taskTitle} at ${currentTime};
             `
+            // p.style.marginBottom = "10px";
+
             container.appendChild(p);
 
         });
