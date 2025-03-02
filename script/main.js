@@ -1,4 +1,4 @@
-console.log("Hello")
+// console.log("All Ok")
 
 const completeBtns = document.getElementsByClassName("complete-btns");
 
@@ -12,12 +12,14 @@ const completeBtns = document.getElementsByClassName("complete-btns");
 
             const newTaskNumber= convertedTaskNumber - 1;
             document.getElementById("task-number").innerText = newTaskNumber;
+            // console.log("newTaskNumber")
 
             const reduceNumber = document.getElementById("reduce-number").innerText;
             const convertedReduceNumber = parseFloat(reduceNumber); 
 
             const newReduceNumber = convertedReduceNumber + 1;
             document.getElementById("reduce-number").innerText = newReduceNumber;
+            // console.log("newReduceNumber")
 
             this.disabled = true;
 
@@ -29,10 +31,11 @@ const completeBtns = document.getElementsByClassName("complete-btns");
             }
 
             let taskTitle = this.closest('.close-task-title').querySelector('.task-title').innerText;
-            console.log(taskTitle);
+            // console.log(taskTitle);
 
             let now = new Date();
             let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            // console.log("currentTime")
 
             const container = document.getElementById("task-activity");
             const p = document.createElement("p");
@@ -44,6 +47,8 @@ const completeBtns = document.getElementsByClassName("complete-btns");
         });
     }
 
+
+
     function currentDate() {
         return new Date().toLocaleDateString("en-US", {
             weekday: "short", 
@@ -53,17 +58,24 @@ const completeBtns = document.getElementsByClassName("complete-btns");
         }).replace(',', '');
     }
     document.getElementById("current-date").textContent = currentDate();
+    // console.log(currentDate())
+
+
 
     document.getElementById("blog-btn").addEventListener("click", function(){
         window.location.href = "./blog.html";
     })
 
+
+
     const colors = ["#C5FFFD", "#E6EBE0", "#F7F7FF", "#F9E9EC", "#FBF7F4", "#EAF4F4", "#F6FFF8"];
 
     document.getElementById("background-changer").onclick = function() {
-        const colorIndex = Math.floor(Math.random() * colors.length);
-        document.body.style.backgroundColor = colors[colorIndex];
+        const colorsIndex = Math.floor(Math.random() * colors.length);
+        document.body.style.backgroundColor = colors[colorsIndex];
     };
+
+
 
     document.getElementById("clear-history").addEventListener("click", function(){
         const container = document.getElementById("task-activity");
