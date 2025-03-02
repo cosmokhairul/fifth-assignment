@@ -65,6 +65,11 @@ const completeBtns = document.getElementsByClassName("complete-btns");
         document.body.style.backgroundColor = colors[colorIndex];
     };
 
+    document.getElementById("clear-history").addEventListener("click", function(){
+        const container = document.getElementById("task-activity");
+        container.innerHTML = "";
+    })
+
 
 
 // document.getElementById("complete-btn").addEventListener("click", function(){
