@@ -39,9 +39,12 @@ const completeBtns = document.getElementsByClassName("complete-btns");
 
             const container = document.getElementById("task-activity");
             const p = document.createElement("p");
-            p.innerText = `
-            You have complete the task ${taskTitle} at ${currentTime};
+            p.innerHTML = `
+            <div class="bg-[#F4F7FF] p-3 rounded-xl">
+                <p>You have completed the task ${taskTitle} at ${currentTime}</p>
+            </div>
             `
+            // container.classList.add('new-activity');
             // p.style.marginBottom = "10px";
 
             container.appendChild(p);
